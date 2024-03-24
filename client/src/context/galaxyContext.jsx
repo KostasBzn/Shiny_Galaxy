@@ -1,5 +1,4 @@
 import { createContext } from "react";
-import { useState } from "react";
 import axios from "axios";
 
 export const GalaxyContext = createContext();
