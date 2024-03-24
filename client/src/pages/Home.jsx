@@ -73,6 +73,7 @@ const Home = () => {
                 position: "relative",
                 left: buttonPosition.left,
                 top: buttonPosition.top,
+                transition: "left 0.1s, top 0.1s",
               }}
             >
               {" "}
