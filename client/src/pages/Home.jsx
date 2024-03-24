@@ -6,7 +6,7 @@ const Home = () => {
   const { sendConfirmationEmail } = useContext(GalaxyContext);
   const [buttonPosition, setButtonPosition] = useState({ left: 0, top: 0 });
   const [isLoading, setIsLoading] = useState(false);
-  const [confirmed, setConfirmed] = useState(true);
+  const [confirmed, setConfirmed] = useState(false);
 
   const handleMouseHover = () => {
     const newPosition = {
@@ -64,8 +64,12 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="home-confirmed-container">
-        {confirmed && <Confirm setConfirmed={setConfirmed} />}
+      <div>
+        {confirmed && (
+          <div className="home-confirmed-container">
+            <Confirm setConfirmed={setConfirmed} />
+          </div>
+        )}
       </div>
     </>
   );
