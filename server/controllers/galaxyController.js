@@ -7,7 +7,6 @@ export const sendEmail = async (req, res) => {
     emailInvitation(email);
     res.send({
       success: true,
-      message: `I get the fucking email: ${email}`,
     });
   } catch (error) {
     console.error("Error sending email notification", error.message);

@@ -13,7 +13,6 @@ const GalaxyContextProvider = ({ children }) => {
 
       if (response.data.success) {
         console.log("Email send successfully");
-        console.log(response.data.message);
       }
     } catch (error) {
       console.log("Error sending the conformation e-mail");

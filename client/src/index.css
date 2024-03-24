@@ -61,6 +61,17 @@ body {
   margin: 0 auto;
 }
 
+.home-yes-button-loading {
+  background-color: #818181;
+  color: #525252;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  margin: 0 auto;
+}
+
 .home-no-button {
   background-color: var(--rasbery);
   color: var(--pink);

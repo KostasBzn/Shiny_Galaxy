@@ -4,6 +4,7 @@ import { GalaxyContext } from "../context/galaxyContext.jsx";
 const Home = () => {
   const { sendConfirmationEmail } = useContext(GalaxyContext);
   const [buttonPosition, setButtonPosition] = useState({ left: 0, top: 0 });
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleMouseHover = () => {
     const newPosition = {
@@ -13,8 +14,15 @@ const Home = () => {
     setButtonPosition(newPosition);
   };
 
-  const handleYesClick = () => {
-    sendConfirmationEmail("kostasbouzianis@gmail.com");
+  const handleYesClick = async () => {
+    setIsLoading(true);
+    try {
+      await sendConfirmationEmail("kostasbouzianis@gmail.com");
+    } catch (error) {
+      console.error("Error sending email:", error);
+    } finally {
+      setIsLoading(false);
+    }
     console.log("You clicked yes!");
   };
 
@@ -25,9 +33,15 @@ const Home = () => {
       </div>
       <div className="home-buttons-container">
         <div className="home-yes-button-container">
-          <button className="home-yes-button" onClick={handleYesClick}>
-            Yes!! <i className="fa-regular fa-face-smile-wink"></i>
-          </button>
+          {isLoading ? (
+            <button className="home-yes-button-loading" disabled>
+              Yes!!...
+            </button>
+          ) : (
+            <button className="home-yes-button" onClick={handleYesClick}>
+              Yes!! <i className="fa-regular fa-face-smile-wink"></i>
+            </button>
+          )}
         </div>
         <div className="home-no-button-container">
           <button
