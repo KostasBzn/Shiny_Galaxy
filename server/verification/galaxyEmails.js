@@ -18,23 +18,7 @@ export const emailInvitation = async (email) => {
     to: email,
     subject: "Date confirmation!!!",
     html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <div style="background-color: #f5f5f5; padding: 20px; text-align: center;">
-            <h1 style="color: #333;">This is your date confimation with Kostas</h1>
-          </div>
-          <div style="padding: 20px;">
-            <p style="font-size: 16px;">Dear Tyhe,</p>
-            <p style="font-size: 16px;">Please show this email the day you meet with Kostas to verify that you are not an alien that abducted your real body and he've sent a copy of you on earth!!</p>
-            <p style="font-size: 16px;">To go back to your site please click the button bellow:</p>
-            <div style="text-align: center; margin-top: 20px;">
-              <a href="${clientURL}/" style="background-color: #b2456e; color: #fbeae7; padding: 10px 20px; text-decoration: none; border-radius: 25px; font-size: 16px;">Go Back</a>
-            </div>
-           <p style="font-size: 16px;">Kostas</p>
-          </div>
-          <div style="background-color: #f5f5f5; padding: 20px; text-align: center;">
-            <p style="font-size: 14px; color: #666;">This is an automated message. Please do not reply to this email.</p>
-          </div>
-        </div>
+       <p>Hello</p>
       `,
   });
 
