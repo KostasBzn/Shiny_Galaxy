@@ -23,7 +23,6 @@ const Home = () => {
     } finally {
       setIsLoading(false);
     }
-    console.log("You clicked yes!");
   };
 
   return (
