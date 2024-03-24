@@ -34,7 +34,7 @@ const Home = () => {
         <div className="home-yes-button-container">
           {isLoading ? (
             <button className="home-yes-button-loading" disabled>
-              Yes!!...
+              Yes!! <i className="fa-regular fa-face-smile-wink"></i>...
             </button>
           ) : (
             <button className="home-yes-button" onClick={handleYesClick}>

@@ -4,7 +4,7 @@ export const sendEmail = async (req, res) => {
   const { email } = req.body;
 
   try {
-    emailInvitation(email);
+    await emailInvitation(email);
     res.send({
       success: true,
     });
