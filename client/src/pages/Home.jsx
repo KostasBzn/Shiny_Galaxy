@@ -10,7 +10,7 @@ const Home = () => {
 
   const handleMouseHover = () => {
     const newPosition = {
-      left: Math.floor(Math.random() * 401) - 200,
+      left: Math.floor(Math.random() * 361) - 180,
       top: Math.floor(Math.random() * 200) + 1,
     };
     setButtonPosition(newPosition);
@@ -40,11 +40,7 @@ const Home = () => {
         <div className="home-buttons-container">
           <div className="home-yes-button-container">
             {isLoading ? (
-              <button
-                className="home-yes-button-loading"
-                disabled
-                style={{ display: "flex", alignItems: "center" }}
-              >
+              <button className="home-yes-button-loading" disabled>
                 Yes!!{" "}
                 <img
                   width="32"
@@ -56,11 +52,7 @@ const Home = () => {
                 ...
               </button>
             ) : (
-              <button
-                className="home-yes-button"
-                onClick={handleYesClick}
-                style={{ display: "flex", alignItems: "center" }}
-              >
+              <button className="home-yes-button" onClick={handleYesClick}>
                 Yes!!{" "}
                 <img
                   width="32"
@@ -73,6 +65,7 @@ const Home = () => {
             )}
           </div>
           <div className="home-no-button-container">
+            {" "}
             <button
               className="home-no-button"
               onMouseMove={handleMouseHover}
@@ -80,18 +73,18 @@ const Home = () => {
                 position: "relative",
                 left: buttonPosition.left,
                 top: buttonPosition.top,
-                display: "flex",
-                alignItems: "center", // Align items vertically
-                justifyContent: "center", // Center items horizontally
               }}
             >
-              <div style={{ marginRight: "8px" }}>No</div>
-              <img
-                width="32"
-                height="32"
-                src="https://img.icons8.com/material-outlined/48/fbeae7/alien.png"
-                alt="alien"
-              />
+              {" "}
+              <div className="home-no-button-content">
+                <p>No</p>
+                <img
+                  width="32"
+                  height="32"
+                  src="https://img.icons8.com/material-outlined/48/fbeae7/alien.png"
+                  alt="alien"
+                />
+              </div>
             </button>
           </div>
         </div>

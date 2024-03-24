@@ -59,6 +59,8 @@ body {
   cursor: pointer;
   font-size: 18px;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
 }
 
 .home-yes-button-loading {
@@ -70,6 +72,8 @@ body {
   cursor: pointer;
   font-size: 18px;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
 }
 
 .home-no-button {
@@ -82,9 +86,10 @@ body {
   font-size: 18px;
 }
 
-.fa-regular.fa-face-smile-wink,
-.fa-solid.fa-heart-crack {
-  margin-left: 5px;
+.home-no-button-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .home-no-button-container {
