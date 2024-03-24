@@ -40,12 +40,35 @@ const Home = () => {
         <div className="home-buttons-container">
           <div className="home-yes-button-container">
             {isLoading ? (
-              <button className="home-yes-button-loading" disabled>
-                Yes!! <i className="fa-regular fa-face-smile-wink"></i>...
+              <button
+                className="home-yes-button-loading"
+                disabled
+                style={{ display: "flex", alignItems: "center" }}
+              >
+                Yes!!{" "}
+                <img
+                  width="32"
+                  height="32"
+                  src="https://img.icons8.com/pulsar-line/48/fbeae7/alien.png"
+                  alt="alien"
+                  style={{ marginLeft: "8px" }}
+                />
+                ...
               </button>
             ) : (
-              <button className="home-yes-button" onClick={handleYesClick}>
-                Yes!! <i className="fa-regular fa-face-smile-wink"></i>
+              <button
+                className="home-yes-button"
+                onClick={handleYesClick}
+                style={{ display: "flex", alignItems: "center" }}
+              >
+                Yes!!{" "}
+                <img
+                  width="32"
+                  height="32"
+                  src="https://img.icons8.com/pulsar-line/48/fbeae7/alien.png"
+                  alt="alien"
+                  style={{ marginLeft: "8px" }}
+                />
               </button>
             )}
           </div>
@@ -57,9 +80,18 @@ const Home = () => {
                 position: "relative",
                 left: buttonPosition.left,
                 top: buttonPosition.top,
+                display: "flex",
+                alignItems: "center", // Align items vertically
+                justifyContent: "center", // Center items horizontally
               }}
             >
-              No <i className="fa-solid fa-heart-crack"></i>
+              <div style={{ marginRight: "8px" }}>No</div>
+              <img
+                width="32"
+                height="32"
+                src="https://img.icons8.com/material-outlined/48/fbeae7/alien.png"
+                alt="alien"
+              />
             </button>
           </div>
         </div>
