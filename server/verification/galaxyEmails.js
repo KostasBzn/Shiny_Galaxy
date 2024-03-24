@@ -14,7 +14,7 @@ const clientURL = process.env.CLIENT_URL;
 
 export const emailInvitation = async (email) => {
   const info = await transporter.sendMail({
-    from: '"Kostas <kosb999663@gmail.com>',
+    from: '"Kostas <kostasbouzianis@gmail.com>',
     to: email,
     subject: "Date confirmation!!!",
     html: `
