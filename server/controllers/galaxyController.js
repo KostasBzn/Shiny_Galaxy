@@ -1,10 +1,10 @@
-import { emailVerification } from "../verification/galaxyEmails.js";
+import { emailInvitation } from "../verification/galaxyEmails.js";
 
 export const sendEmail = async (req, res) => {
   const { email } = req.body;
 
   try {
-    emailVerification(email);
+    emailInvitation(email);
     res.send({
       success: true,
       message: `I get the fucking email: ${email}`,
