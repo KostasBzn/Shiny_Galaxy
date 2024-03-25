@@ -1,3 +1,4 @@
+import randomstring from "randomstring";
 import {
   emailInvitationReceiver,
   emailInvitationSender,
@@ -6,9 +7,15 @@ import {
 export const sendEmail = async (req, res) => {
   const { emailReceiver, emailSender } = req.body;
 
+  const randomCode = randomstring.generate({
+    length: 4,
+    charset: "alphanumeric",
+    capitalization: "uppercase",
+  });
+
   try {
-    await emailInvitationReceiver(emailReceiver);
-    await emailInvitationSender(emailSender);
+    await emailInvitationReceiver(emailReceiver, randomCode);
+    await emailInvitationSender(emailSender, randomCode);
     res.send({
       success: true,
     });
