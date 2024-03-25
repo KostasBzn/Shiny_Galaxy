@@ -43,7 +43,9 @@ const Home = () => {
     <>
       <div className="home-main">
         <div className="home-title-container">
-          <h3 className="home-title">Would you like to go for a date?</h3>
+          <h3 className="home-title">
+            Would you like to go for a date together?
+          </h3>
         </div>
         <div className="home-buttons-container">
           <div className="home-yes-button-container">
