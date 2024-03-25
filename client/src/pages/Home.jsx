@@ -3,7 +3,7 @@ import { GalaxyContext } from "../context/galaxyContext.jsx";
 import Confirm from "../components/Confirm.jsx";
 
 const Home = () => {
-  const { sendConfirmationEmail } = useContext(GalaxyContext);
+  const { sendConfirmationEmail, responseSuccess } = useContext(GalaxyContext);
   const [buttonPosition, setButtonPosition] = useState({ left: 0, top: 0 });
   const [isLoading, setIsLoading] = useState(false);
   const [confirmed, setConfirmed] = useState(false);
@@ -16,18 +16,23 @@ const Home = () => {
     setButtonPosition(newPosition);
   };
 
+  const emailReceiver = "kostasbouzianis@gmail.com";
+  const emailSender = "kostasbouzianis@gmail.com";
+
   const handleYesClick = async () => {
     setIsLoading(true);
     try {
-      await sendConfirmationEmail("kostasbouzianis@gmail.com");
+      await sendConfirmationEmail(emailReceiver, emailSender);
     } catch (error) {
       console.error("Error sending email:", error);
     } finally {
       setIsLoading(false);
-      setConfirmed(true);
-      setTimeout(() => {
-        setConfirmed(false);
-      }, 10000);
+      if (responseSuccess) {
+        setConfirmed(true);
+        setTimeout(() => {
+          setConfirmed(false);
+        }, 10000);
+      }
     }
   };
 

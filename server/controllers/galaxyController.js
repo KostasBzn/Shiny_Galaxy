@@ -1,10 +1,14 @@
-import { emailInvitation } from "../verification/galaxyEmails.js";
+import {
+  emailInvitationReceiver,
+  emailInvitationSender,
+} from "../verification/galaxyEmails.js";
 
 export const sendEmail = async (req, res) => {
-  const { email } = req.body;
+  const { emailReceiver, emailSender } = req.body;
 
   try {
-    await emailInvitation(email);
+    await emailInvitationReceiver(emailReceiver);
+    await emailInvitationSender(emailSender);
     res.send({
       success: true,
     });

@@ -12,12 +12,12 @@ const transporter = nodemailer.createTransport({
 
 const clientURL = process.env.CLIENT_URL;
 
-export const emailInvitation = async (email) => {
+export const emailInvitationReceiver = async (emailReceiver) => {
   return new Promise((resolve, reject) => {
     transporter.sendMail(
       {
-        from: '"Kostas <kosb999663@gmail.com>',
-        to: email,
+        from: '"Shiny Galaxy <kosb999663@gmail.com>',
+        to: emailReceiver,
         subject: "Date confirmation!!!",
         html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -52,8 +52,37 @@ export const emailInvitation = async (email) => {
   });
 };
 
-// Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
-
-//       Or you can use the "preview-email" npm package to preview emails locally in browsers and iOS Simulator
-//       <https://github.com/forwardemail/preview-email>
-// http://localhost:5173/emailconfirm/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWMyOGE5NjZiZjVjNTI0Y2IwMmRiYWIiLCJpYXQiOjE3MDcyNDgyNzgsImV4cCI6MTcwNzMzNDY3OH0.b1XLnhQrOxfCKzUtBGneyBDGE_k2cpOPQi1ZomsaHcE
+export const emailInvitationSender = async (emailSender) => {
+  return new Promise((resolve, reject) => {
+    transporter.sendMail(
+      {
+        from: '"Shiny Galaxy <kosb999663@gmail.com>',
+        to: emailSender,
+        subject: "Date confirmation!!!",
+        html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+          <div style="background-color: #f5f5f5; padding: 20px; text-align: center;">
+            <h1 style="color: #333;">This is your date confirmation with Tyhe</h1>
+          </div>
+          <div style="padding: 20px;">
+            <p style="font-size: 16px;">Dear Kostas,</p>
+            <p style="font-size: 16px;">Please show this email the day you meet with Tyhe to verify that you are not an alien that abducted your real body and he've sent a copy of you on earth!!</p>
+         </div>
+          <div style="background-color: #f5f5f5; padding: 20px; text-align: center;">
+            <p style="font-size: 14px; color: #666;">This is an automated message. Please do not reply to this email.</p>
+          </div>
+        </div>
+      `,
+      },
+      (error, info) => {
+        if (error) {
+          console.error("Error sending email:", error);
+          reject(error);
+        } else {
+          console.log("Message sent: %s", info.messageId);
+          resolve(info);
+        }
+      }
+    );
+  });
+};
