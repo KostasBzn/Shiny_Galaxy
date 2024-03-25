@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { GalaxyContext } from "../context/galaxyContext.jsx";
 import Confirm from "../components/Confirm.jsx";
 
@@ -27,14 +27,17 @@ const Home = () => {
       console.error("Error sending email:", error);
     } finally {
       setIsLoading(false);
-      if (responseSuccess) {
-        setConfirmed(true);
-        setTimeout(() => {
-          setConfirmed(false);
-        }, 10000);
-      }
     }
   };
+
+  useEffect(() => {
+    if (responseSuccess) {
+      setConfirmed(true);
+      setTimeout(() => {
+        setConfirmed(false);
+      }, 10000);
+    }
+  }, [responseSuccess]);
 
   return (
     <>
