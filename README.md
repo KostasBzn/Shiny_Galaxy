@@ -2,7 +2,5 @@
 
 - **Features:**
 
-  - This App has no features, i made it to ask a girl i like with a nice and different way.
-  - It actually has a yes button, and a no button that you can never click because it goes away on hover
-
-Click [here](https://shiny-galaxy-client.vercel.app/) to visit the website.
+  - This App has no super features, i made it for someone special, to ask her out with a nice and different way.
+  - It actually has a yes button that works, and a no button that you can never click because it changes positions randomly on hover
