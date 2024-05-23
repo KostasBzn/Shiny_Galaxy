@@ -16,7 +16,7 @@ const Home = () => {
     setButtonPosition(newPosition);
   };
 
-  const emailReceiver = "tyhe444@gmail.com";
+  const emailReceiver = "kostasbouzianis@gmail.com";
   const emailSender = "kostasbouzianis@gmail.com";
 
   const handleYesClick = async () => {
